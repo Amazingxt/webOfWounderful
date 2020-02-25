@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>wounderfulchina</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    .dropdown-menu a:hover {
+      background-color: #4b5866;
+    }
+    /* .photo img{
+    cursor: pointer;
+    transition: all 0.1s;   /*图片放大过程的时间*/
+    /* }  */ 
+    .photo img:hover{
+    transform: scale(20);/*鼠标经过图片放大的倍数*/
+    transform-origin: left top;
+    }
+    </style>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+                <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="index">HOME</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="subscribe_article">文章订阅</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">仓管系统</a>
+                    <div class="dropdown-menu" style="background-color: #343a40;">
+                      <a class="dropdown-item" style="color: #fafbfb;" href="input"><span>录入</span></a>
+                      <a class="dropdown-item" style="color: #fafbfb;" href="query_web">查询</a>
+                    </div>
+                  </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#">格式转换</a>
+                </li> 
+            </ul>
+            <form action="http://localhost:5000/query" method="POST" class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" name="keywords" type="text" placeholder="Search" aria-label="Search">
+                <select class="form-control mr-sm-2" name="category" id="category" required="">
+                    <option value="">Choose...</option>
+                    <option>关键词</option>
+                    <option>购买自（公司）</option>
+                    <option>设备类型</option>
+                    <option>购买人</option>
+                    <option>购买时间（格式：2020-01-01---2020-02-01）</option>
+                </select>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>  
+        </nav>
+        <br/> <br/>
+        <div style="margin-top: 5%; margin-left: 5%; margin-right: 5%;">
+            <p> *设备及耗材的详细信息在（）文件夹中（如有上传）</p>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>缩略图</th>
+                <th>名称</th>
+                <th>信息</th>
+                <th>分类</th>
+                <th>采购自</th>
+                <th>数目</th>
+                <th>购买人</th>
+                <th>购买时间</th>
+              </tr>
+            </thead>
+            <tbody id="group">
+            </tbody>
+          </table>
+          </div>
+
+          <div id="dataid" d="{{info}}" style="display:none"></div>
+
+          <script>  
+
+            var js_data = document.getElementById('dataid').getAttribute('d');
+            var info = js_data.split(",");
+            var length = '{{length}}';
+            // var info_ = info[17]
+            // document.write(info_.split("'")[1]);
+            var leng = parseInt(length)/9;
+            // document.write(info[1].split("'")[1])
+            // document.write("<img src=" + "'../equipmentFiles/logo.jpg'" + ">");
+
+            var groupTable = $('#group');
+            for(var i = 0 ;i < leng;i++){
+
+                groupTable.append('<tr> ' +
+                '<td>' + info[i*9+0].split("'")[1] + '</td>' + 
+                '<td>' + '<div class="photo"> <img src=' + info[i*9+1].split("'")[1] + ' width=auto height="30px">' + '</div> </td>' +
+                '<td>' + info[i*9+2].split("'")[1] + '</td>' +
+                '<td>' + info[i*9+3].split("'")[1] + '</td>' + 
+                '<td>' + info[i*9+4].split("'")[1] + '</td>' +
+                '<td>' + info[i*9+5].split("'")[1] + '</td>' +
+                '<td>' + info[i*9+6].split("'")[1] + '</td>' + 
+                '<td>' + info[i*9+7].split("'")[1] + '</td>' +
+                '<td>' + info[i*9+8].split("'")[1] + '</td>' +
+                '</tr>')
+                }
+        </script>
+
+        <br/> <br/> <br/> <br/>
+        <div class="row">
+        <div class="col-md-8">
+        </div>
+        <div class="col-md-4">
+            <form action="http://localhost:5000/delete_equipments" method="POST">
+            <div class="card bg-secondary text-white">
+                <div class="card-body">
+                    <h4>更改存储信息</h4>
+                    <p style="color: rgb(253, 6, 6);">一经删除无法复原，请谨慎操作！</p>
+                    <div class="mb-3">
+                        <label for="ID">ID</label>
+                        <input type="text" class="form-control" name="ID" id="ID" placeholder="" value="" required="" style="width: 30%;">
+                        <div class="invalid-feedback">
+                            Valid first ID is required.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-md-5 mb-3">
+                            <input type="text" class="form-control" name="number" id="number" placeholder="数目（加或者减）" value="" style="width: 100%;">
+                            </div>
+                            <div class="col-md-7 mb-3">
+                            <div class="btn-group" name="options" data-toggle="buttons">
+                                <label class="btn btn-default" style="color: floralwhite;">
+                                    <input type="radio" name="option" id="plus" value="p"> 加
+                                </label>
+                                <label class="btn btn-default" style="color: floralwhite;">
+                                    <input type="radio" name="option" id="miuns" value="m"> 减
+                                </label>
+                                <label class="btn btn-default" style="color: floralwhite;">
+                                    <input type="radio" name="option" id="del" value="d"> 删除
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                            <div class="col text-center">
+                            <button class="btn btn-light" style="width: 100%;" type="submit">提交</button>
+                            </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="col-md-0">
+        </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

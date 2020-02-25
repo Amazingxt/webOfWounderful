@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>wounderfulchina</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+    .dropdown-menu a:hover {
+      background-color: #4b5866;
+    }
+    </style>
+
+</head>
+<body>
+
+    <div class="container-fluid">
+                <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="index">HOME</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link" href="subscribe_article">文章订阅</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">仓管系统</a>
+                    <div class="dropdown-menu" style="background-color: #343a40;">
+                      <a class="dropdown-item" style="color: #fafbfb;" href="input"><span>录入</span></a>
+                      <a class="dropdown-item" style="color: #fafbfb;" href="query_web">查询</a>
+                    </div>
+                  </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#">格式转换</a>
+                </li> 
+            </ul>
+            </div>  
+        </nav>
+        <br/> <br/>
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150">
+            <h3> <span class="text-muted">仓管系统（查询）</span></h3>
+            <p class="lead" style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;"> 为了有效管理实验室物资，我们强烈建议您使用仓库管理系统，每当有人购置新的设备或者耗材，就录入系统，并由专人管理。真正做到心中有数，实验不慌。</p>
+        </div>
+        <div>
+        <form action="http://localhost:5000/query" method="POST" class="was-validated">
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-2">
+                <h4 style="text-align: right;">选择查询内容</h4>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                <select class="custom-select d-block w-100" name="category" id="category" required="">
+                    <option value="">Choose...</option>
+                    <option>All</option>
+                    <option>关键词</option>
+                    <option>购买自（公司）</option>
+                    <option>设备类型</option>
+                    <option>购买人</option>
+                    <option>购买时间（格式：2020-01-01---2020-02-01）</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid category.
+                </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+        <div class="invalid-feedback">
+            Please select a valid category.
+        </div>
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-5 text-right">
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="keywords" placeholder="Search..." aria-label="Search">
+                    <div class="invalid-feedback">
+                        Please enter something.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 text-left">
+                <button class="btn btn-outline-success btn-lg" type="submit">Search</button>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
