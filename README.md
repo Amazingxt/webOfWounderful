@@ -3,47 +3,27 @@ Web app based on python flask and bootstrap. There are three modules in this web
 
 The organization structure of this project:
 
-spiderArXiv/
 
-​		arXiv/
-
-​				items.py
-
-​				middleware.py
-
-​				pipelines.py
-
-​				settings.py
-
-​				spiders/
-
-​						quantum_article.py		
-
-​		DataBase/
-
-​				2020-2-22-articles.db
-
-​				equipmentInfo.db
-
-​				personQueryInfo.db
-
-​		Web/
-
-​				info.py
-
-​				static/
-
-​						equipmentFiles/
-
-​						webFigs/
-
-​				templates/
-
-​		Query.py
-
-​		Send_Info.py
-
-​		spiderArXiv.py
+	arXiv/
+			items.py
+			middleware.py
+			pipelines.py
+			settings.py
+			spiders/
+					quantum_article.py		
+	DataBase/
+			2020-2-22-articles.db
+			equipmentInfo.db
+			personQueryInfo.db
+	Web/
+			info.py
+			static/
+					equipmentFiles/
+					webFigs/
+			templates/
+	Query.py
+	Send_Info.py
+	spiderArXiv.py
 
 1、文章爬取
 
