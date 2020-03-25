@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>wounderfulchina</title>
     <meta charset="utf-8">
@@ -9,161 +10,332 @@
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
-    .dropdown-menu a:hover {
-      background-color: #4b5866;
-    }
-    /* .photo img{
+        .dropdown-menu a:hover {
+            background-color: #4b5866;
+        }
+
+        /* .photo img{
     cursor: pointer;
     transition: all 0.1s;   /*图片放大过程的时间*/
-    /* }  */ 
-    .photo img:hover{
-    transform: scale(20);/*鼠标经过图片放大的倍数*/
-    transform-origin: left top;
-    }
+        /* }  */
+        .photo img:hover {
+            transform: scale(10);
+            /*鼠标经过图片放大的倍数*/
+            transform-origin: left top;
+            transition: all 0.01s;
+        }
     </style>
 
 </head>
+
 <body>
 
     <div class="container-fluid">
-                <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height: 8%;">
             <a class="navbar-brand" href="index">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="subscribe_article">文章订阅</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">仓管系统</a>
-                    <div class="dropdown-menu" style="background-color: #343a40;">
-                      <a class="dropdown-item" style="color: #fafbfb;" href="input"><span>录入</span></a>
-                      <a class="dropdown-item" style="color: #fafbfb;" href="query_web">查询</a>
-                    </div>
-                  </li> 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">格式转换</a>
-                </li> 
-            </ul>
-            <form action="http://localhost:5000/query" method="POST" class="form-inline mt-2 mt-md-0">
-                <input class="form-control mr-sm-2" name="keywords" type="text" placeholder="Search" aria-label="Search">
-                <select class="form-control mr-sm-2" name="category" id="category" required="">
-                    <option value="">Choose...</option>
-                    <option>关键词</option>
-                    <option>购买自（公司）</option>
-                    <option>设备类型</option>
-                    <option>购买人</option>
-                    <option>购买时间（格式：2020-01-01---2020-02-01）</option>
-                </select>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            </div>  
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="subscribe_article">文章订阅</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">仓管系统</a>
+                        <div class="dropdown-menu" style="background-color: #343a40;">
+                            <a class="dropdown-item" style="color: #fafbfb;" href="input"><span>录入</span></a>
+                            <a class="dropdown-item" style="color: #fafbfb;" href="query_web">查询</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">格式转换</a>
+                    </li>
+                </ul>
+                <div>
+                    <style>
+                        /* style for search bar */
+                        .search-bar {
+                            border-radius: 10rem;
+                            background: #fff;
+                            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15)
+                        }
+
+                        .search-bar .form-group {
+                            position: relative;
+                            margin-bottom: 0
+                        }
+
+                        .search-bar .form-group::after {
+                            display: block;
+                            width: 1px;
+                            height: 60%;
+                            content: '';
+                            background: #ddd;
+                            position: absolute;
+                            top: 20%;
+                            right: 0
+                        }
+
+                        .search-bar .form-group.no-divider::after,
+                        .search-bar .form-group:last-of-type::after {
+                            display: none
+                        }
+
+                        .search-bar .form-control {
+                            height: calc(1.5em + 1rem + 2px)
+                        }
+
+                        .search-bar .input-label-absolute-right .label-absolute {
+                            right: 0
+                        }
+
+                        .search-bar.search-bar-with-tabs {
+                            border-radius: .4rem
+                        }
+
+                        @media (max-width: 991.98px) {
+                            .search-bar {
+                                border-radius: 20px
+                            }
+
+                            .search-bar .form-group {
+                                margin-bottom: 1rem
+                            }
+
+                            .search-bar .form-group::after {
+                                display: block;
+                                width: calc(100% - 4rem);
+                                height: 1px;
+                                content: '';
+                                -webkit-transform: translateX(-50%);
+                                transform: translateX(-50%);
+                                background: #dee2e6;
+                                position: absolute;
+                                top: auto;
+                                right: auto;
+                                bottom: 0;
+                                left: 50%
+                            }
+
+                            .search-bar .form-control {
+                                height: calc(1.6em + .75rem + 2px);
+                                padding: 10px 20px
+                            }
+
+                            .search-bar .input-label-absolute-right .label-absolute {
+                                right: 1rem
+                            }
+
+                            .search-bar .bootstrap-select {
+                                display: block !important;
+                                width: 100% !important;
+                                padding: 0
+                            }
+
+                            .search-bar .bootstrap-select button {
+                                display: block;
+                                width: 100% !important;
+                                padding: 10px 20px
+                            }
+                        }
+
+                        .nav-tabs.search-bar-nav-tabs {
+                            border-bottom: none
+                        }
+
+                        .nav-tabs.search-bar-nav-tabs .nav-link {
+                            padding: 1rem 2rem 1.5rem;
+                            margin-bottom: -10px;
+                            font-weight: bold;
+                            border: 1px solid transparent;
+                            color: #495057;
+                            background-color: rgba(255, 255, 255, 0.5);
+                            transition: all .2s ease-out;
+                            border-top-left-radius: .4rem;
+                            border-top-right-radius: .4rem
+                        }
+
+                        .nav-tabs.search-bar-nav-tabs .nav-link:hover,
+                        .nav-tabs.search-bar-nav-tabs .nav-link:focus {
+                            color: #495057;
+                            background-color: rgba(255, 255, 255, 0.8)
+                        }
+
+                        .nav-tabs.search-bar-nav-tabs .nav-link.active,
+                        .nav-tabs.search-bar-nav-tabs .nav-item.show .nav-link {
+                            color: #4E66F8;
+                            background-color: #fff;
+                            border-color: #fff
+                        }
+
+                        .rounded-xl {
+                            border-radius: 10rem
+                        }
+                    </style>
+                    <form action="http://localhost:5000/query" method="POST" class="form-inline mt-2 mt-md-0">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-4">
+                                </div>
+                                <div class="col-xl-8">
+                                    <div class="search-bar mt-0 p-3 p-lg-1 pl-lg-4" style="block-size: 100%;">
+
+                                        <div class="row">
+                                            <div class="col-lg-3 d-flex align-items-center form-group">
+                                                <input type="text" name="ckName" placeholder="仓库 ID"
+                                                    class="form-control border-0 shadow-0" required=""
+                                                    style="width: 90%; height: 80%; font-size: small;">
+                                                <div class="invalid-feedback">
+                                                    Please enter ID.
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 d-flex align-items-center form-group">
+
+                                                <input type="text" name="keywords" placeholder="Search" id="keywords"
+                                                    class="form-control border-0 shadow-0" required=""
+                                                    style="width: 90%; height: 80%; font-size: small;">
+
+                                            </div>
+                                            <div class="col-lg-4 d-flex align-items-center form-group no-divider">
+                                                <div class="dropdown bootstrap-select" style="height: 80%;">
+                                                    <div class="form-group" style="height: 100%;">
+                                                        <select class="custom-select d-block w-100" name="category"
+                                                            id="category" required=""
+                                                            style="color: #899097; border: 0; width: 90%; height: 100%; font-size: small;">
+                                                            <option value="">Choose...</option>
+                                                            <option>All</option>
+                                                            <option>关键词</option>
+                                                            <option>购买自（公司）</option>
+                                                            <option>设备类型</option>
+                                                            <option>购买人</option>
+                                                            <option>购买时间（格式：2020-01-01---2020-02-01）</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2">
+                                                <button type="submit"
+                                                    class="btn btn-primary btn-block rounded-xl h-100">Search
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </nav>
-        <br/> <br/>
+        <br /> <br />
         <div style="margin-top: 5%; margin-left: 5%; margin-right: 5%;">
-            <p> *设备及耗材的详细信息在（）文件夹中（如有上传）</p>
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>缩略图</th>
-                <th>名称</th>
-                <th>信息</th>
-                <th>分类</th>
-                <th>采购自</th>
-                <th>数目</th>
-                <th>购买人</th>
-                <th>购买时间</th>
-              </tr>
-            </thead>
-            <tbody id="group">
-            </tbody>
-          </table>
-          </div>
+            <p> *设备及耗材的详细信息点击可下载（如有上传）</p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>缩略图</th>
+                        <th>名称</th>
+                        <th>信息</th>
+                        <th>分类</th>
+                        <th>采购自</th>
+                        <th>数目</th>
+                        <th>购买人</th>
+                        <th>购买时间</th>
+                        <th>资料</th>
+                    </tr>
+                </thead>
+                <tbody id="group">
+                </tbody>
+            </table>
+        </div>
 
-          <div id="dataid" d="{{info}}" style="display:none"></div>
+        <div id="dataid" d="{{info}}" style="display:none"></div>
 
-          <script>  
+        <script>  
 
             var js_data = document.getElementById('dataid').getAttribute('d');
             var info = js_data.split(",");
             var length = '{{length}}';
             // var info_ = info[17]
             // document.write(info_.split("'")[1]);
-            var leng = parseInt(length)/9;
+            var leng = parseInt(length) / 10;
             // document.write(info[1].split("'")[1])
             // document.write("<img src=" + "'../equipmentFiles/logo.jpg'" + ">");
 
             var groupTable = $('#group');
-            for(var i = 0 ;i < leng;i++){
+            for (var i = 0; i < leng; i++) {
 
                 groupTable.append('<tr> ' +
-                '<td>' + info[i*9+0].split("'")[1] + '</td>' + 
-                '<td>' + '<div class="photo"> <img src=' + info[i*9+1].split("'")[1] + ' width=auto height="30px">' + '</div> </td>' +
-                '<td>' + info[i*9+2].split("'")[1] + '</td>' +
-                '<td>' + info[i*9+3].split("'")[1] + '</td>' + 
-                '<td>' + info[i*9+4].split("'")[1] + '</td>' +
-                '<td>' + info[i*9+5].split("'")[1] + '</td>' +
-                '<td>' + info[i*9+6].split("'")[1] + '</td>' + 
-                '<td>' + info[i*9+7].split("'")[1] + '</td>' +
-                '<td>' + info[i*9+8].split("'")[1] + '</td>' +
-                '</tr>')
-                }
+                    '<td>' + info[i * 10 + 0].split("'")[1] + '</td>' +
+                    '<td>' + '<div class="photo"> <img src=' + info[i * 10 + 1].split("'")[1] + ' width=auto height="30px">' + '</div> </td>' +
+                    '<td>' + info[i * 10 + 2].split("'")[1] + '</td>' +
+                    '<td>' + info[i * 10 + 3].split("'")[1] + '</td>' +
+                    '<td>' + info[i * 10 + 4].split("'")[1] + '</td>' +
+                    '<td>' + info[i * 10 + 5].split("'")[1] + '</td>' +
+                    '<td>' + info[i * 10 + 6].split("'")[1] + '</td>' +
+                    '<td>' + info[i * 10 + 7].split("'")[1] + '</td>' +
+                    '<td>' + info[i * 10 + 8].split("'")[1] + '</td>' +
+                    '<td>' + '<a href=' + info[i * 10 + 9].split("'")[1] + '>点击下载 </a>' + '</td>' +
+                    '</tr>')
+            }
         </script>
 
-        <br/> <br/> <br/> <br/>
+        <br /> <br /> <br /> <br />
         <div class="row">
-        <div class="col-md-8">
-        </div>
-        <div class="col-md-4">
-            <form action="http://localhost:5000/delete_equipments" method="POST">
-            <div class="card bg-secondary text-white">
-                <div class="card-body">
-                    <h4>更改存储信息</h4>
-                    <p style="color: rgb(253, 6, 6);">一经删除无法复原，请谨慎操作！</p>
-                    <div class="mb-3">
-                        <label for="ID">ID</label>
-                        <input type="text" class="form-control" name="ID" id="ID" placeholder="" value="" required="" style="width: 30%;">
-                        <div class="invalid-feedback">
-                            Valid first ID is required.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-md-5 mb-3">
-                            <input type="text" class="form-control" name="number" id="number" placeholder="数目（加或者减）" value="" style="width: 100%;">
-                            </div>
-                            <div class="col-md-7 mb-3">
-                            <div class="btn-group" name="options" data-toggle="buttons">
-                                <label class="btn btn-default" style="color: floralwhite;">
-                                    <input type="radio" name="option" id="plus" value="p"> 加
-                                </label>
-                                <label class="btn btn-default" style="color: floralwhite;">
-                                    <input type="radio" name="option" id="miuns" value="m"> 减
-                                </label>
-                                <label class="btn btn-default" style="color: floralwhite;">
-                                    <input type="radio" name="option" id="del" value="d"> 删除
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="mb-4">
-                            <div class="col text-center">
-                            <button class="btn btn-light" style="width: 100%;" type="submit">提交</button>
-                            </div>
-                </div>
+            <div class="col-md-8">
             </div>
-            </form>
+            <div class="col-md-4">
+                <form action="http://localhost:5000/delete_equipments" method="POST">
+                    <div class="card bg-secondary text-white">
+                        <div class="card-body">
+                            <h4>更改存储信息</h4>
+                            <p style="color: rgb(253, 6, 6);">一经删除无法复原，请谨慎操作！</p>
+                            <div class="mb-3">
+                                <label for="ID">ID</label>
+                                <input type="text" class="form-control" name="ID" id="ID" placeholder="" value=""
+                                    required="" style="width: 30%;">
+                                <div class="invalid-feedback">
+                                    Valid first ID is required.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-md-5 mb-3">
+                                        <input type="text" class="form-control" name="number" id="number"
+                                            placeholder="数目（加或者减）" value="" style="width: 100%;">
+                                    </div>
+                                    <div class="col-md-7 mb-3">
+                                        <div class="btn-group" name="options" data-toggle="buttons">
+                                            <label class="btn btn-default" style="color: floralwhite;">
+                                                <input type="radio" name="option" id="plus" value="p"> 加
+                                            </label>
+                                            <label class="btn btn-default" style="color: floralwhite;">
+                                                <input type="radio" name="option" id="miuns" value="m"> 减
+                                            </label>
+                                            <label class="btn btn-default" style="color: floralwhite;">
+                                                <input type="radio" name="option" id="del" value="d"> 删除
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <div class="col text-center">
+                                <button class="btn btn-light" style="width: 100%;" type="submit">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-0">
+            </div>
         </div>
-        <div class="col-md-0">
-        </div>
-        </div>
-        
+        <br /> <br /> <br />
     </div>
 
 </body>
+
 </html>

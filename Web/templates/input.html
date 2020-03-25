@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>wounderfulchina</title>
     <meta charset="utf-8">
@@ -12,44 +13,47 @@
 
     </script>
     <style>
-    .dropdown-menu a:hover {
-      background-color: #4b5866;
-    }
+        .dropdown-menu a:hover {
+            background-color: #4b5866;
+        }
     </style>
 
 </head>
+
 <body>
 
     <div class="container-fluid">
-                <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height: 8%;">
             <a class="navbar-brand" href="index">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="subscribe_article">文章订阅</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">仓管系统</a>
-                    <div class="dropdown-menu" style="background-color: #343a40;">
-                      <a class="dropdown-item" style="color: #fafbfb;" href="input"><span>录入</span></a>
-                      <a class="dropdown-item" style="color: #fafbfb;" href="query_web">查询</a>
-                    </div>
-                  </li> 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">格式转换</a>
-                </li> 
-            </ul>
-            </div>  
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="subscribe_article">文章订阅</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">仓管系统</a>
+                        <div class="dropdown-menu" style="background-color: #343a40;">
+                            <a class="dropdown-item" style="color: #fafbfb;" href="input"><span>录入</span></a>
+                            <a class="dropdown-item" style="color: #fafbfb;" href="query_web">查询</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">格式转换</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        <br/> <br/>
+        <br /> <br />
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150">
             <h3> <span class="text-muted">仓管系统（录入）</span></h3>
-            <p class="lead" style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;"> 为了有效管理实验室物资，我们强烈建议您使用仓库管理系统，每当有人购置新的设备或者耗材，就录入系统，并由专人管理。真正做到心中有数，实验不慌。</p>
+            <p class="lead"
+                style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;">
+                为了有效管理实验室物资，我们强烈建议您使用仓库管理系统，每当有人购置新的设备或者耗材，就录入系统，并由专人管理。真正做到心中有数，实验不慌。</p>
         </div>
 
         <div class="row">
@@ -57,100 +61,118 @@
 
             </div>
             <div class="col-md-6">
-                <form action="http://localhost:5000/uploader" method="POST" class="was-validated" enctype = "multipart/form-data">
-                <h4 class="md-3"> 设备信息 </h4>
-                <br/>
-                <div class="form-group">
-                <div class="mb-3">
-                    <label for="equName">设备名称</label>
-                    <input type="text" class="form-control" name="equName" id="equName" placeholder="" value="" required="" style="width: 50%;">
-                    <div class="invalid-feedback">
-                        Please enter a valid equipment name.
+                <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+                    <h4 class="md-3"> 设备信息 </h4>
+                    <br />
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="ckName">仓库ID</label>
+                                <input type="text" class="form-control" name="ckName" id="ckName" placeholder=""
+                                    value="" required="">
+                                <div class="invalid-feedback">
+                                    Please enter a valid storehouse name.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="equName">设备名称</label>
+                                <input type="text" class="form-control" name="equName" id="equName" placeholder=""
+                                    value="" required="">
+                                <div class="invalid-feedback">
+                                    Please enter a valid equipment name.
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-                <div class="form-group">
-                <div class="mb-3">
-                    <label for="equInfo">设备基本信息（基本参数及存放地点）</label>
-                    <input type="text" class="form-control" name="equInfo" id="equInfo" placeholder="" value="" required="">
-                    <div class="invalid-feedback">
-                      Please enter a valid equipment information.
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="equInfo">设备基本信息（基本参数及存放地点）</label>
+                            <input type="text" class="form-control" name="equInfo" id="equInfo" placeholder="" value=""
+                                required="">
+                            <div class="invalid-feedback">
+                                Please enter a valid equipment information.
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-                <div class="form-group">
-                    <div class="mb-3">
-                        <label for="category"> 设备类型</label>
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="category"> 设备类型</label>
                             <select class="custom-select d-block w-100" name="category" id="category" required="">
-                              <option value="">Choose...</option>
-                              <option>耗材</option>
-                              <option>设备</option>
+                                <option value="">Choose...</option>
+                                <option>耗材</option>
+                                <option>设备</option>
                             </select>
                             <div class="invalid-feedback">
-                              Please select a valid category.
+                                Please select a valid category.
                             </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="institution">购买自（单位or公司）</label>
-                    <input type="text" class="form-control" name="institution" id="institution" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Please enter a valid institution.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="number">购买数量</label>
-                    <input type="text" class="form-control" name="number" id="number" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Please enter a valid number.
-                    </div>
-                </div>
-                </div>
-                </div>
-                <div class="form-group">
-                <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="Purchaser"> 购买人</label>
-                    <input type="text" class="form-control" name="Purchaser" id="Purchaser" placeholder="" required="">
-                    <div class="invalid-feedback">
-                        Please enter a valid Purchaser.    
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="time"> 购买时间</label>
-                    <!-- <input type="data" class="form-control" name="time" id="time" placeholder=""> -->
-                    <input type="date" placeholder="" class="form-control" name="time" id="time" required=""/>
-                    <div class="invalid-feedback">
-                        Please enter a valid time.    
-                    </div>
-                </div>
-                </div>
-                </div>
-                <div class="form-group">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="Figure"> 设备图片</label>
-                        <input type="file" class="form-control" name="file" id="Figure" placeholder="" required="">
-                        <div class="invalid-feedback">
-                            Please enter a valid picture.    
                         </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="file"> 设备文档</label>
-                        <input type="file" class="form-control" name="file" id="file" placeholder="">
-                        <div class="invalid-feedback">
-                            Please enter a valid files.    
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="institution">购买自（单位or公司）</label>
+                                <input type="text" class="form-control" name="institution" id="institution"
+                                    placeholder="" required="">
+                                <div class="invalid-feedback">
+                                    Please enter a valid institution.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="number">购买数量</label>
+                                <input type="text" class="form-control" name="number" id="number" placeholder=""
+                                    required="">
+                                <div class="invalid-feedback">
+                                    Please enter a valid number.
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                </div>
-                <hr class="mb-4">
-                <div class="col text-center">
-                <button class="btn btn-primary" style="width: 50%;" type="submit">提交</button>
-                </div>
-                <br/> <br/>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="Purchaser"> 购买人</label>
+                                <input type="text" class="form-control" name="Purchaser" id="Purchaser" placeholder=""
+                                    required="">
+                                <div class="invalid-feedback">
+                                    Please enter a valid Purchaser.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="time"> 购买时间</label>
+                                <!-- <input type="data" class="form-control" name="time" id="time" placeholder=""> -->
+                                <input type="date" placeholder="" class="form-control" name="time" id="time"
+                                    required="" />
+                                <div class="invalid-feedback">
+                                    Please enter a valid time.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="Figure"> 设备图片</label>
+                                <input type="file" class="form-control" name="file" id="Figure" placeholder=""
+                                    required="">
+                                <div class="invalid-feedback">
+                                    Please enter a valid picture.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="file"> 设备文档</label>
+                                <input type="file" class="form-control" name="file" id="file" placeholder="">
+                                <div class="invalid-feedback">
+                                    Please enter a valid files.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <div class="col text-center">
+                        <button class="btn btn-primary" style="width: 50%;" type="submit">提交</button>
+                    </div>
+                    <br /> <br />
                 </form>
             </div>
 
@@ -158,14 +180,15 @@
 
             </div>
 
-            </div>
-
-        </div>
-        <!-- 底部内容 -->
-        <div style="background-color: black; padding:1%;">
-            <p style="color: antiquewhite; text-align: center ">Copyright@www.wounderfulchina.com</p>
         </div>
 
     </div>
+    <!-- 底部内容 -->
+    <div style="background-color: black; padding:1%;">
+        <p style="color: antiquewhite; text-align: center ">Copyright@www.wounderfulchina.com</p>
+    </div>
+
+    </div>
 </body>
+
 </html>

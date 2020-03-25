@@ -10,15 +10,17 @@ import datetime
 
 i = datetime.datetime.now()
 
-class ArxivPipeline(object):
 
+class ArxivPipeline(object):
     def __init__(self):
 
-        self.today = str(i.year)+'-'+str(i.month)+'-'+str(i.day)+'-articles.db'
-        self.conn = sqlite3.connect('../DataBase/' + self.today)
+        self.today = (
+            str(i.year) + "-" + str(i.month) + "-" + str(i.day) + "-articles.db"
+        )
+        self.conn = sqlite3.connect("../DataBase/articleDatabase" + self.today)
         self.c = self.conn.cursor()
 
-    def close_spider(self,spider):
+    def close_spider(self, spider):
 
         self.conn.commit()
         self.c.close()
@@ -27,17 +29,28 @@ class ArxivPipeline(object):
     def process_item(self, item, spider):
 
         try:
-            self.c.execute('''create table user_tb(
+            self.c.execute(
+                """create table user_tb(
                 _id integer primary key autoincrement,
                 title text,
                 abstract text,
                 url text,
                 authors text,
                 major text)
-                ''')
+                """
+            )
         except:
             pass
 
-        self.c.execute('insert into user_tb values(null, ?, ?, ?, ?,?)',
-            ((item['title'],item['abstract'],item['url'],item['authors'],item['major'])))
-
+        self.c.execute(
+            "insert into user_tb values(null, ?, ?, ?, ?,?)",
+            (
+                (
+                    item["title"],
+                    item["abstract"],
+                    item["url"],
+                    item["authors"],
+                    item["major"],
+                )
+            ),
+        )

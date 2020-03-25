@@ -1,32 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Directory Theme by Bootstrapious</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Price Slider Stylesheets -->
+    <link rel="stylesheet"
+        href="https://d19m59y37dris4.cloudfront.net/directory/1-4-1/vendor/nouislider/nouislider.css">
+    <!-- Google fonts - Playfair Display-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
+    <!-- Google fonts - Poppins-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
+    <!-- swiper-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <!-- Magnigic Popup-->
+    <link rel="stylesheet"
+        href="https://d19m59y37dris4.cloudfront.net/directory/1-4-1/vendor/magnific-popup/magnific-popup.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/directory/1-4-1/css/style.default.afb5697e.css"
+        id="theme-stylesheet">
+    <link id="new-stylesheet" rel="stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/directory/1-4-1/css/custom.0a822280.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="https://d19m59y37dris4.cloudfront.net/directory/1-4-1/img/favicon.png">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
-  <body style="margin:30px">
-        <div class="row">
-            <div class="col-xs-3">
-                <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/200x200">
-                </a>
+
+<body>
+    <section class="hero-home">
+        <div class="swiper-container hero-slider swiper-container-fade swiper-container-horizontal">
+            <div class="swiper-wrapper dark-overlay" style="transition-duration: 0ms;">
+                <div style="background-image: url(&quot;https://d19m59y37dris4.cloudfront.net/directory/1-4-1/img/photo/photo-1501621965065-c6e1cf6b53e2.jpg&quot;); width: 970px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"
+                    class="swiper-slide swiper-slide-prev"></div>
+                <div style="background-image: url(&quot;https://d19m59y37dris4.cloudfront.net/directory/1-4-1/img/photo/photo-1519974719765-e6559eac2575.jpg&quot;); width: 970px; opacity: 1; transform: translate3d(-970px, 0px, 0px); transition-duration: 0ms;"
+                    class="swiper-slide swiper-slide-active"></div>
+                <div style="background-image: url(&quot;https://d19m59y37dris4.cloudfront.net/directory/1-4-1/img/photo/photo-1490578474895-699cd4e2cf59.jpg&quot;); width: 970px; opacity: 0; transform: translate3d(-1940px, 0px, 0px); transition-duration: 0ms;"
+                    class="swiper-slide swiper-slide-next"></div>
+                <div style="background-image: url(&quot;https://d19m59y37dris4.cloudfront.net/directory/1-4-1/img/photo/photo-1534850336045-c6c6d287f89e.jpg&quot;); width: 970px; opacity: 0; transform: translate3d(-2910px, 0px, 0px); transition-duration: 0ms;"
+                    class="swiper-slide"></div>
             </div>
-            <div class="col-xs-3">
-                <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/200x200">
-                </a>
-            </div>
-            <div class="col-xs-3">
-                <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/200x200">
-                </a>
-            </div>
-            <div class="col-xs-3">
-                <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/200x200">
-                </a>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+        </div>
+        <div class="container py-6 py-md-7 text-white z-index-20">
+            <div class="row">
+                <div class="col-xl-10">
+                    <div class="text-center text-lg-left">
+                        <p class="subtitle letter-spacing-4 mb-2 text-secondary text-shadow">The best holiday experience
+                        </p>
+                        <h1 class="display-3 font-weight-bold text-shadow">Stay like a local</h1>
+                    </div>
+                    <div class="search-bar mt-5 p-3 p-lg-1 pl-lg-4">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg-4 d-flex align-items-center form-group">
+                                    <input type="text" name="search" placeholder="What are you searching for?"
+                                        class="form-control border-0 shadow-0">
+                                </div>
+                                <div class="col-lg-3 d-flex align-items-center form-group">
+                                    <div class="input-label-absolute input-label-absolute-right w-100">
+                                        <label for="location" class="label-absolute"><i
+                                                class="fa fa-crosshairs"></i><span class="sr-only">City</span></label>
+                                        <input type="text" name="location" placeholder="Location" id="location"
+                                            class="form-control border-0 shadow-0">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 d-flex align-items-center form-group no-divider">
+                                    <div class="dropdown bootstrap-select dropup show"><select title="Categories"
+                                            data-style="btn-form-control" class="selectpicker" tabindex="-98">
+                                            <option class="bs-title-option" value=""></option>
+                                            <option value="small">Restaurants</option>
+                                            <option value="medium">Hotels</option>
+                                            <option value="large">Cafes</option>
+                                            <option value="x-large">Garages</option>
+                                        </select><button type="button"
+                                            class="btn dropdown-toggle btn-form-control bs-placeholder"
+                                            data-toggle="dropdown" role="combobox" aria-owns="bs-select-1"
+                                            aria-haspopup="listbox" aria-expanded="true" title="Categories">
+                                            <div class="filter-option">
+                                                <div class="filter-option-inner">
+                                                    <div class="filter-option-inner-inner">Categories</div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                        <div class="dropdown-menu show"
+                                            style="max-height: 481.188px; overflow: hidden; min-height: 156px; position: absolute; transform: translate3d(0px, -200px, 0px); top: 0px; left: 0px; will-change: transform;"
+                                            x-placement="top-start">
+                                            <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"
+                                                style="max-height: 465.188px; overflow-y: auto; min-height: 140px;">
+                                                <ul class="dropdown-menu inner show" role="presentation"
+                                                    style="margin-top: 0px; margin-bottom: 0px;">
+                                                    <li><a role="option" class="dropdown-item" id="bs-select-1-0"
+                                                            tabindex="0" aria-setsize="4" aria-posinset="1"><span
+                                                                class="text">Restaurants</span></a></li>
+                                                    <li><a role="option" class="dropdown-item" id="bs-select-1-1"
+                                                            tabindex="0" aria-setsize="4" aria-posinset="2"><span
+                                                                class="text">Hotels</span></a></li>
+                                                    <li><a role="option" class="dropdown-item" id="bs-select-1-2"
+                                                            tabindex="0" aria-setsize="4" aria-posinset="3"><span
+                                                                class="text">Cafes</span></a></li>
+                                                    <li><a role="option" class="dropdown-item" id="bs-select-1-3"
+                                                            tabindex="0" aria-setsize="4" aria-posinset="4"><span
+                                                                class="text">Garages</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="submit" class="btn btn-primary btn-block rounded-xl h-100">Search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+</body>
 
-  </body>
 </html>
