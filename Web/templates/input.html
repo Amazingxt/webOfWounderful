@@ -9,9 +9,6 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-
-    </script>
     <style>
         .dropdown-menu a:hover {
             background-color: #4b5866;
@@ -24,7 +21,7 @@
 
     <div class="container-fluid">
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height: 8%;">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <a class="navbar-brand" href="index">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -49,11 +46,20 @@
         </nav>
         <br /> <br />
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150">
+            <!-- <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150"> -->
             <h3> <span class="text-muted">仓管系统（录入）</span></h3>
-            <p class="lead"
-                style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;">
-                为了有效管理实验室物资，我们强烈建议您使用仓库管理系统，每当有人购置新的设备或者耗材，就录入系统，并由专人管理。真正做到心中有数，实验不慌。</p>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead" style="line-height: 2; font-size: 18px">
+                        <!-- <p class="lead" style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;"> -->
+                        为了有效管理实验室物资，我们强烈建议您使用仓库管理系统，每当有人购置新的设备或者耗材，就录入系统，并由专人管理。真正做到心中有数，实验不慌。
+                    </p>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
         </div>
 
         <div class="row">
@@ -61,7 +67,7 @@
 
             </div>
             <div class="col-md-6">
-                <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+                <form action="uploader" method="POST" enctype="multipart/form-data">
                     <h4 class="md-3"> 设备信息 </h4>
                     <br />
                     <div class="form-group">

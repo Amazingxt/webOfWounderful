@@ -132,7 +132,8 @@ def delete_equipments():
     ID = request.form["ID"]
     number = request.form["number"]
 
-    database = "../DataBase/equDatabase/equipmentInfo.db"
+    # database = "../DataBase/equDatabase/equipmentInfo.db"
+    database = "../DataBase/equDatabase/equipmentInfo_" + request.form["ckID"] + ".db"
     conn = sqlite3.connect(database)
     c = conn.cursor()
     sql = """ UPDATE user_tb SET number = ? WHERE _id = ?"""

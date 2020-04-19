@@ -32,7 +32,7 @@
 
     <div class="container-fluid">
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height: 8%;">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <a class="navbar-brand" href="index">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -174,7 +174,7 @@
                             border-radius: 10rem
                         }
                     </style>
-                    <form action="http://localhost:5000/query" method="POST" class="form-inline mt-2 mt-md-0">
+                    <form action="query" method="POST" class="form-inline mt-2 mt-md-0">
                         <div class="container">
                             <div class="row">
                                 <div class="col-xl-4">
@@ -288,13 +288,21 @@
             <div class="col-md-8">
             </div>
             <div class="col-md-4">
-                <form action="http://localhost:5000/delete_equipments" method="POST">
+                <form action="delete_equipments" method="POST">
                     <div class="card bg-secondary text-white">
                         <div class="card-body">
                             <h4>更改存储信息</h4>
                             <p style="color: rgb(253, 6, 6);">一经删除无法复原，请谨慎操作！</p>
                             <div class="mb-3">
-                                <label for="ID">ID</label>
+                                <label for="ckID">仓库ID</label>
+                                <input type="text" class="form-control" name="ckID" id="ID" placeholder="" value=""
+                                    required="" style="width: 30%;">
+                                <div class="invalid-feedback">
+                                    Valid first ID is required.
+                                </div>
+                            </div>
+                            <div class="mb-3"
+                                <label for="ID">设备ID</label>
                                 <input type="text" class="form-control" name="ID" id="ID" placeholder="" value=""
                                     required="" style="width: 30%;">
                                 <div class="invalid-feedback">
@@ -302,7 +310,8 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <div class="row">
+                                <label for="数目">数目</label>
+                                <div class="row"> 
                                     <div class="col-md-5 mb-3">
                                         <input type="text" class="form-control" name="number" id="number"
                                             placeholder="数目（加或者减）" value="" style="width: 100%;">

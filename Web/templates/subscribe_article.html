@@ -21,7 +21,7 @@
 
     <div class="container-fluid">
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height: 8%;">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <a class="navbar-brand" href="index">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -47,11 +47,20 @@
         <br /> <br />
 
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150">
+            <!-- <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150"> -->
             <h3> <span class="text-muted">文章订阅</span></h3>
-            <p class="lead"
-                style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;">
-                补充下面的信息，即刻起订阅您感兴趣的文章。随着受众的增加，我们会根据大家的需求逐步增加所支持订阅期刊的种类。我们保证不会泄漏您的私人信息</p>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead" style="line-height: 2; font-size: 18px">
+                        <!-- <p class="lead" style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;"> -->
+                        补充下面的信息，即刻起订阅您感兴趣的文章。随着受众的增加，我们会根据大家的需求逐步增加所支持订阅期刊的种类。我们保证不会泄漏您的私人信息
+                    </p>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
         </div>
 
         <div class="row">
@@ -59,7 +68,7 @@
 
             </div>
             <div class="col-md-5">
-                <form action="http://localhost:5000/submit_info" method="POST">
+                <form action="submit_info" method="POST">
                     <h4 class="md-3"> 基本信息 </h4>
                     <br />
                     <div class="mb-3">
@@ -121,7 +130,7 @@
             </div>
 
             <div class="col-md-3">
-                <form action="http://localhost:5000/delete_info" method="POST">
+                <form action="delete_info" method="POST">
                     <div class="card bg-secondary text-white">
                         <div class="card-body">
                             <h4>删除信息</h4>

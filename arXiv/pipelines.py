@@ -17,7 +17,9 @@ class ArxivPipeline(object):
         self.today = (
             str(i.year) + "-" + str(i.month) + "-" + str(i.day) + "-articles.db"
         )
-        self.conn = sqlite3.connect("../DataBase/articleDatabase" + self.today)
+        # print("../DataBase/articleDatabase/" + self.today)
+        # self.conn = sqlite3.connect("../DataBase/articleDatabase/" + self.today)
+        self.conn = sqlite3.connect("./DataBase/articleDatabase/" + self.today)
         self.c = self.conn.cursor()
 
     def close_spider(self, spider):

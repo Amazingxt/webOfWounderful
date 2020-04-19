@@ -23,7 +23,7 @@
 
     <div class="container-fluid">
         <!-- 导航栏 -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top style=" height: 8%;"">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <a class="navbar-brand" href="index">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -48,11 +48,20 @@
         </nav>
         <br /> <br />
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150">
+            <!-- <img class="d-block mx-auto mb-4" src="Logo.jpeg" alt="" width="150"> -->
             <h3> <span class="text-muted">仓管系统（查询）</span></h3>
-            <p class="lead"
-                style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;">
-                为了有效管理实验室物资，我们强烈建议您使用仓库管理系统，每当有人购置新的设备或者耗材，就录入系统，并由专人管理。真正做到心中有数，实验不慌。</p>
+            <div class="row">
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead" style="line-height: 2; font-size: 18px">
+                        <!-- <p class="lead" style="margin-top: 30px; margin-left: 300px; margin-bottom: 10px; margin-right: 300px; font-size: 18px;"> -->
+                        为了有效管理实验室物资，我们强烈建议您使用仓库管理系统，每当有人购置新的设备或者耗材，就录入系统，并由专人管理。真正做到心中有数，实验不慌。
+                    </p>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
         </div>
         <div>
             <style>
@@ -175,7 +184,7 @@
                     border-radius: 10rem
                 }
             </style>
-            <form action="http://localhost:5000/query" method="POST">
+            <form action="query" method="POST">
                 <div class="container py-3">
                     <div class="row">
                         <div class="col-xl-2">
