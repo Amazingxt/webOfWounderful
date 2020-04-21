@@ -17,7 +17,7 @@ class Query_articleInfo(object):
 
         try:
             print(self.today)
-            self.conn = sqlite3.connect('./DataBase/' + self.today)
+            self.conn = sqlite3.connect('./DataBase/articleDatabase/' + self.today)
             self.c = self.conn.cursor()
             print ('connect article database success!')
         except:

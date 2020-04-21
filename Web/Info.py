@@ -30,6 +30,9 @@ def index():
 def subscribe_article():
     return render_template("./subscribe_article.html")
 
+@app.route("/format")
+def format():
+    return render_template("./format.html")
 
 @app.route("/input")
 def input():

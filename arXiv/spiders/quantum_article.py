@@ -7,6 +7,7 @@ class QuantumArticleSpider(scrapy.Spider):
     name = 'quantum_article'
     allowed_domains = ['arxiv.com']
     start_urls = ['https://arxiv.org/list/quant-ph/new/',
+    'https://arxiv.org/list/physics.optics/new',
                   ]
 
     def parse(self, response):
