@@ -1,6 +1,8 @@
 # spiderArXiv
 Web app based on python flask and bootstrap. There are three modules in this web, including article spider, storehouse management and format transformation of article. To run this app, typing "python Info.py" in the bash and this app will run in the url: http://localhost:5000
 
+本项目已经部署上线，目前运行在 http://39.100.194.44:5000
+
 The organization structure of this project:
 
 
